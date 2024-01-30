@@ -1,7 +1,7 @@
 function show(id)
             {
                 console.log(id);
-                if(id === 'dog1')
+            if(id === 'dog1')
 				document.getElementById(id).innerHTML = `<img src="img/dog.jpg"/>`;
 			if(id === 'frog1')
 				document.getElementById(id).innerHTML = `<img src="img/frog.jpg"/>`;
