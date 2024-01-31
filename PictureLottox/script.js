@@ -1,7 +1,39 @@
-function show(id)
-            {
-                console.log(id);
-            if(id === 'dog1')
+let a = undefined;
+		let b = undefined;
+		let incorrect = 0;
+
+		
+		
+		blankall();
+		
+	
+		function show(id)
+		{
+			if(a === undefined)
+			{
+				a = id.slice(0, -1); // fjern 1 eller 2 for sammenligning
+				console.log(a);
+			}
+			else
+			{
+				b = id.slice(0, -1); // fjern 1 eller 2 for sammenligning
+				if(a !== b)
+				{
+					console.log('a = ' + a + '. b = ' + b);
+					a = undefined;
+					b = undefined;
+					blankall();
+					incorrect = 1;
+					console.log('incorrect');
+				}
+				else
+				{
+					console.log('correct');
+					a = undefined;
+					b = undefined;
+				}
+			}
+			if(id === 'dog1')
 				document.getElementById(id).innerHTML = `<img src="img/dog.jpg"/>`;
 			if(id === 'frog1')
 				document.getElementById(id).innerHTML = `<img src="img/frog.jpg"/>`;
@@ -31,11 +63,14 @@ function show(id)
 				document.getElementById(id).innerHTML = `<img src="img/elephant.jpg"/>`;
 			if(id === 'horse2')
 				document.getElementById(id).innerHTML = `<img src="img/horse.jpg"/>`;
-			/* hehe... */
-			if(id === 'empty')
+			/* hax */
+			if(incorrect === 1)
+			{
+				incorrect = 0;
 				blankall();
-            }
-            function blankall()
+			}
+		}
+		function blankall()
 		{
 			document.getElementById('dog1').innerHTML = /*HTML*/``;
 			document.getElementById('frog1').innerHTML = /*HTML*/``;
@@ -52,8 +87,4 @@ function show(id)
 			document.getElementById('cat2').innerHTML = /*HTML*/``;
 			document.getElementById('elephant2').innerHTML = /*HTML*/``;
 			document.getElementById('horse2').innerHTML = /*HTML*/``;
-		}
-		window.onload = function()
-		{
-			blankall();
 		}
