@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        out();
+        function out(){
+            document.getElementById('app').innerHTML = /*HTML*/`
+                <h1>Du er utenfor en leilighet.</h1>
+                <button onclick="room()">Gå til Inngang.</button>
+            `;
+        }
+        function room(){
+            document.getElementById('app').innerHTML = /*HTML*/`
+                <h1>Du er i gangen</h1>
+                <button onclick="out()">Du er utenfor en leilighet</button>
+                <button onclick="roomA()">Gå inn i stua</button>
+                <button onclick="roomB()">Gå inn på badet</button>
+                <button onclick="roomC()">Gå inn på kjøkkenet</button>
+            `;
+        }
+        function roomA(){
+            document.getElementById(`app`).innerHTML = /*HTML*/`
+                <h1>Du er i stua<h1>
+                <button onclick="room()">Du er i gangen</button>
+                <button onclick="roomC()">Gå inn i kjøkkenet</button>
+            `;
+        }
+        function roomB(){
+            document.getElementById(`app`).innerHTML = /*HTML*/`
+                <h1>Du er i badet<h1>
+                <button onclick="room()">Du er i gangen</button>
+                
+            `;
+        }
+        function roomC(){
+            document.getElementById(`app`).innerHTML = /*HTML*/`
+                <h1>Du er i kjøkkenet<h1>
+                <button onclick="room()">Du er i gangen</button>
+                <button onclick="roomA()">Gå inn i stua</button>
+            `;
+        }
+    </script>
+</body>
+</html>
