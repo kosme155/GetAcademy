@@ -29,7 +29,7 @@ th {
 <body>
     <table id="myTable">
         <tr>
-            <th>Dag</th>
+            <th id="dag">Dag</th>
             <th>Time</th>
             <th>Minutt</th>
             <th>Temperatur</th>
@@ -56,39 +56,15 @@ th {
             <td>7</td>
         </tr>
     </table>   
+    <button onclick="add">Add</button>
 
     <script>
-            document.getElementById(`myTable`).innerHTML += /*HTML*/ `
-            <table>
-                <tr>
-                    <th>Dag</th>
-                    <th>Time</th>
-                    <th>Minutt</th>
-                    <th>Temperatur</th>
-                </tr>
+            function add() {
+                document.getElementById(`myTable`).innerHTML += /*html*/`
+                
+                `;
 
-                <tr>
-                    <td>1</td>
-                    <td>10</td>
-                    <td>0</td>
-                    <td>5</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>10</td>
-                    <td>15</td>
-                    <td>6</td>
-                </tr>
-
-                <tr>
-                    <td>1</td>
-                    <td>10</td>
-                    <td>30</td>
-                    <td>7</td>
-                </tr>
-            </table>
-            `;
+            }
 
         
     </script>
