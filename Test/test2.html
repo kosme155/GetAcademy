@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="Oppgave121C.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ludo Brett</title>
     <style>
-        
-    div{
+    * {
     border: 0;
     padding: 0;
     margin: 0;
@@ -126,138 +125,213 @@
     <div id="board"></div>
 
     <script>
-        showboard();
+        board();
+        function board(){
+            document.getElementById(`board`).innerHTML += /*HTML*/`
+            <div class="game"></div>
+            `; 
+            boardygreen(`green`,`square square-one`,`square square-two`,`square square-three`,`square square-four`);
+            boardyellow(`yellow`,`square square-one`,);
+            boardred();
+            boardblue();
+            cell1();
+            cell2();
+            cell3();
+            cell4();
+            cell5();
+            cell6();
+            cell7();
+            cell8();
+            cell9();
+            cell10();
+            cell11();
+            cell12();
+            color(`green`,`yellow`,`red`,`blue`);
+        }
+        function box(){
+            boardygreen();
+            boardyellow();
+            boardred();
+            boardblue();
+        }
 
-        function showboard(){
-        document.getElementById(`board`).innerHTML = /*HTML*/`
-        <div class="game">
-
-    <div class="house green">
+        function boardygreen(color,square1,square2,square3,square4){
+            document.getElementById(`board`).innerHTML = /*HTML*/`
+    <div class="house ${color}">
         <div class="box">
-            <div class="square square-one green"></div>
-            <div class="square square-two green"></div>
-            <div class="square square-three green"></div>
-            <div class="square square-four green"></div>
+            <div class="${square1} ${color}"></div>
+            <div class="${square2} ${color}"></div>
+            <div class="${square3} ${color}"></div>
+            <div class="${square4} ${color}"></div>
         </div>
-    </div>
 
-    <div class="house yellow" style="right: 0">
-        <div class="box">
-            <div class="square square-one yellow"></div>
-            <div class="square square-two yellow"></div>
-            <div class="square square-three yellow"></div>
-            <div class="square square-four yellow"></div>
+    `;
+}
+function  boardyellow(color,square1){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="house ${color}" style="right: 0">
+            <div class="box">
+                <div class="${square1} ${color}"></div>
+                <div class="square square-two yellow"></div>
+                <div class="square square-three yellow"></div>
+                <div class="square square-four yellow"></div>
+            </div>
+        </div>        
+        `;
+}
+
+function  boardred(){
+    document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="house red" style="bottom: 0">
+            <div class="box">
+                <div class="square square-one red"></div>
+                <div class="square square-two red"></div>
+                <div class="square square-three red"></div>
+                <div class="square square-four red"></div>
+            </div>
         </div>
-    </div>
-
-    <div class="house red" style="bottom: 0">
-        <div class="box">
-            <div class="square square-one red"></div>
-            <div class="square square-two red"></div>
-            <div class="square square-three red"></div>
-            <div class="square square-four red"></div>
+        
+        `;}
+        function  boardblue(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="house blue" style="bottom: 0;right: 0">
+            <div class="box">
+                <div class="square square-one blue"></div>
+                <div class="square square-two blue"></div>
+                <div class="square square-three blue"></div>
+                <div class="square square-four blue"></div>
+            </div>
         </div>
-    </div>
+        
+        `;}
+        function cell1(){
+            document.getElementById(`board`).innerHTML += /*HTML*/`
+                <div class="home"></div>
+                <div class="cells" style="top: 40%;"></div>
+                <div class="cells g-start" style="top: 40%;left:6.66%;"></div>
+                <div class="cells" style="top: 40%;left:13.32%;"></div>
+                <div class="cells" style="top: 40%;left:19.98%;"></div>
+                <div class="cells" style="top: 40%;left:26.64%;"></div>
+                <div class="cells" style="top: 40%;left:33.3%;"></div>
+        `;}
+        function cell2(){
+            document.getElementById(`board`).innerHTML += /*HTML*/`
+            
+                <div class="cells" style="top: 0;left:40%;"></div>
+                <div class="cells" style="top: 6.66%;left:40%;"></div>
+                <div class="cells safe" style="top: 13.32%;left:40%;"></div>
+                <div class="cells" style="top: 19.98%;left:40%;"></div>
+                <div class="cells" style="top: 26.64%;left:40%;"></div>
+                <div class="cells" style="top: 33.3%;left:40%;"></div>
+        
+        `;}
+        function cell3(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="cells" style="top: 0;left:46.66%;"></div>
+        <div class="cells yellow" style="top: 6.66%;left:46.66%;"></div>
+        <div class="cells yellow" style="top: 13.32%;left:46.66%;"></div>
+        <div class="cells yellow" style="top: 19.98%;left:46.66%;"></div>
+        <div class="cells yellow" style="top: 26.64%;left:46.66%;"></div>
+        <div class="cells yellow" style="top: 33.3%;left:46.66%;"></div>
+        
+        `;}
+        function cell4(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="cells" style="top: 0;left:53.32%;"></div>
+        <div class="cells y-start" style="top: 6.66%;left:53.32%;"></div>
+        <div class="cells" style="top: 13.32%;left:53.32%;"></div>
+        <div class="cells" style="top: 19.98%;left:53.32%;"></div>
+        <div class="cells" style="top: 26.64%;left:53.32%;"></div>
+        <div class="cells" style="top: 33.3%;left:53.32%;"></div>
+        
+        `;}
+        function cell5(){
+            document.getElementById(`board`).innerHTML += /*HTML*/`
+            
+                <div class="cells" style="top: 40%; right: 33.3%"></div>
+                <div class="cells" style="top: 40%;right:26.64%;"></div>
+                <div class="cells" style="top: 40%;right:19.98%;"></div>
+                <div class="cells safe" style="top: 40%;right:13.32%;"></div>
+                <div class="cells" style="top: 40%;right:6.66%;"></div>
+                <div class="cells" style="top: 40%;right:0;"></div>
+        
+        `;}
+        function cell6(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="cells blue" style="top: 46.66%; right: 33.3%"></div>
+        <div class="cells blue" style="top: 46.66%;right:26.64%;"></div>
+        <div class="cells blue" style="top: 46.66%;right:19.98%;"></div>
+        <div class="cells blue" style="top: 46.66%;right:13.32%;"></div>
+        <div class="cells blue" style="top: 46.66%;right:6.66%;"></div>
+        <div class="cells" style="top: 46.66%;right:0;"></div>
+        
+        `;}
 
-    <div class="house blue" style="bottom: 0;right: 0">
-        <div class="box">
-            <div class="square square-one blue"></div>
-            <div class="square square-two blue"></div>
-            <div class="square square-three blue"></div>
-            <div class="square square-four blue"></div>
-        </div>
-    </div>
-
-    <div class="home"></div>
-    <div class="cells" style="top: 40%;"></div>
-    <div class="cells g-start" style="top: 40%;left:6.66%;"></div>
-    <div class="cells" style="top: 40%;left:13.32%;"></div>
-    <div class="cells" style="top: 40%;left:19.98%;"></div>
-    <div class="cells" style="top: 40%;left:26.64%;"></div>
-    <div class="cells" style="top: 40%;left:33.3%;"></div>
-
-    <div class="cells" style="top: 0;left:40%;"></div>
-    <div class="cells" style="top: 6.66%;left:40%;"></div>
-    <div class="cells safe" style="top: 13.32%;left:40%;"></div>
-    <div class="cells" style="top: 19.98%;left:40%;"></div>
-    <div class="cells" style="top: 26.64%;left:40%;"></div>
-    <div class="cells" style="top: 33.3%;left:40%;"></div>
-
-    <div class="cells" style="top: 0;left:46.66%;"></div>
-    <div class="cells yellow" style="top: 6.66%;left:46.66%;"></div>
-    <div class="cells yellow" style="top: 13.32%;left:46.66%;"></div>
-    <div class="cells yellow" style="top: 19.98%;left:46.66%;"></div>
-    <div class="cells yellow" style="top: 26.64%;left:46.66%;"></div>
-    <div class="cells yellow" style="top: 33.3%;left:46.66%;"></div>
-
-    <div class="cells" style="top: 0;left:53.32%;"></div>
-    <div class="cells y-start" style="top: 6.66%;left:53.32%;"></div>
-    <div class="cells" style="top: 13.32%;left:53.32%;"></div>
-    <div class="cells" style="top: 19.98%;left:53.32%;"></div>
-    <div class="cells" style="top: 26.64%;left:53.32%;"></div>
-    <div class="cells" style="top: 33.3%;left:53.32%;"></div>
-
-    <div class="cells" style="top: 40%; right: 33.3%"></div>
-    <div class="cells" style="top: 40%;right:26.64%;"></div>
-    <div class="cells" style="top: 40%;right:19.98%;"></div>
-    <div class="cells safe" style="top: 40%;right:13.32%;"></div>
-    <div class="cells" style="top: 40%;right:6.66%;"></div>
-    <div class="cells" style="top: 40%;right:0;"></div>
-
-    <div class="cells blue" style="top: 46.66%; right: 33.3%"></div>
-    <div class="cells blue" style="top: 46.66%;right:26.64%;"></div>
-    <div class="cells blue" style="top: 46.66%;right:19.98%;"></div>
-    <div class="cells blue" style="top: 46.66%;right:13.32%;"></div>
-    <div class="cells blue" style="top: 46.66%;right:6.66%;"></div>
-    <div class="cells" style="top: 46.66%;right:0;"></div>
-
-    <div class="cells" style="top: 53.32%; right: 33.3%"></div>
-    <div class="cells" style="top: 53.32%;right:26.64%;"></div>
-    <div class="cells" style="top: 53.32%;right:19.98%;"></div>
-    <div class="cells" style="top: 53.32%;right:13.32%;"></div>
-    <div class="cells b-start" style="top: 53.32%;right:6.66%;"></div>
-    <div class="cells" style="top: 53.32%;right:0;"></div>
-
+        function cell7(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        
+        
+            <div class="cells" style="top: 53.32%; right: 33.3%"></div>
+            <div class="cells" style="top: 53.32%;right:26.64%;"></div>
+            <div class="cells" style="top: 53.32%;right:19.98%;"></div>
+            <div class="cells" style="top: 53.32%;right:13.32%;"></div>
+            <div class="cells b-start" style="top: 53.32%;right:6.66%;"></div>
+            <div class="cells" style="top: 53.32%;right:0;"></div>
+        `;}
+        function cell8(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        
     <div class="cells" style="bottom: 0;left:53.32%;"></div>
     <div class="cells" style="bottom: 6.66%;left:53.32%;"></div>
     <div class="cells safe" style="bottom: 13.32%;left:53.32%;"></div>
     <div class="cells" style="bottom: 19.98%;left:53.32%;"></div>
     <div class="cells" style="bottom: 26.64%;left:53.32%;"></div>
     <div class="cells" style="bottom: 33.3%;left:53.32%;"></div>
-
-    <div class="cells" style="bottom: 0;left:46.66%;"></div>
-    <div class="cells red " style="bottom: 6.66%;left:46.66%;"></div>
-    <div class="cells red" style="bottom: 13.32%;left:46.66%;"></div>
-    <div class="cells red" style="bottom: 19.98%;left:46.66%;"></div>
-    <div class="cells red" style="bottom: 26.64%;left:46.66%;"></div>
-    <div class="cells red" style="bottom: 33.3%;left:46.66%;"></div>
-
-    <div class="cells" style="bottom: 0;left:40%;"></div>
-    <div class="cells r-start" style="bottom: 6.66%;left:40%;"></div>
-    <div class="cells" style="bottom: 13.32%;left:40%;"></div>
-    <div class="cells" style="bottom: 19.98%;left:40%;"></div>
-    <div class="cells" style="bottom: 26.64%;left:40%;"></div>
-    <div class="cells" style="bottom: 33.3%;left:40%;"></div>
-
-    <div class="cells" style="top: 53.32%; left: 33.3%"></div>
-    <div class="cells" style="top: 53.32%;left:26.64%;"></div>
-    <div class="cells" style="top: 53.32%;left:19.98%;"></div>
-    <div class="cells safe" style="top: 53.32%;left:13.32%;"></div>
-    <div class="cells" style="top: 53.32%;left:6.66%;"></div>
-    <div class="cells" style="top: 53.32%;left:0;"></div>
-
-    <div class="cells green" style="top: 46.66%;left: 33.3%"></div>
-    <div class="cells green" style="top: 46.66%;left:26.64%;"></div>
-    <div class="cells green" style="top: 46.66%;left:19.98%;"></div>
-    <div class="cells green" style="top: 46.66%;left:13.32%;"></div>
-    <div class="cells green" style="top: 46.66%;left:6.66%;"></div>
-    <div class="cells" style="top: 46.66%;left:0;"></div>
-    </div>
-
-
-    `;
-}
+        
+        `;}
+        function cell9(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        
+        <div class="cells" style="bottom: 0;left:46.66%;"></div>
+        <div class="cells red " style="bottom: 6.66%;left:46.66%;"></div>
+        <div class="cells red" style="bottom: 13.32%;left:46.66%;"></div>
+        <div class="cells red" style="bottom: 19.98%;left:46.66%;"></div>
+        <div class="cells red" style="bottom: 26.64%;left:46.66%;"></div>
+        <div class="cells red" style="bottom: 33.3%;left:46.66%;"></div>
+        `;}
+        function cell10(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="cells" style="bottom: 0;left:40%;"></div>
+        <div class="cells r-start" style="bottom: 6.66%;left:40%;"></div>
+        <div class="cells" style="bottom: 13.32%;left:40%;"></div>
+        <div class="cells" style="bottom: 19.98%;left:40%;"></div>
+        <div class="cells" style="bottom: 26.64%;left:40%;"></div>
+        <div class="cells" style="bottom: 33.3%;left:40%;"></div>
+        
+        `;}
+        function cell11(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        
+            <div class="cells" style="top: 53.32%; left: 33.3%"></div>
+            <div class="cells" style="top: 53.32%;left:26.64%;"></div>
+            <div class="cells" style="top: 53.32%;left:19.98%;"></div>
+            <div class="cells safe" style="top: 53.32%;left:13.32%;"></div>
+            <div class="cells" style="top: 53.32%;left:6.66%;"></div>
+            <div class="cells" style="top: 53.32%;left:0;"></div>
+        
+        `;
+    }
+        function cell12(){
+        document.getElementById(`board`).innerHTML += /*HTML*/`
+        <div class="cells green" style="top: 46.66%;left: 33.3%"></div>
+        <div class="cells green" style="top: 46.66%;left:26.64%;"></div>
+        <div class="cells green" style="top: 46.66%;left:19.98%;"></div>
+        <div class="cells green" style="top: 46.66%;left:13.32%;"></div>
+        <div class="cells green" style="top: 46.66%;left:6.66%;"></div>
+        <div class="cells" style="top: 46.66%;left:0;"></div>
+        </div>
+        `;
+    }     
     </script>
 </body>
-
 </html>
