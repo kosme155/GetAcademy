@@ -28,48 +28,34 @@ th {
 
 <body>
     <table id="myTable">
-        <tr>
-            <th id="dag">Dag</th>
-            <th>Time</th>
-            <th>Minutt</th>
-            <th>Temperatur</th>
-        </tr>
-
-        <tr>
-            <td>1</td>
-            <td>10</td>
-            <td>0</td>
-            <td>5</td>
-        </tr>
-
-        <tr>
-            <td>1</td>
-            <td>10</td>
-            <td>15</td>
-            <td>6</td>
-        </tr>
-
-        <tr>
-            <td>1</td>
-            <td>10</td>
-            <td>30</td>
-            <td>7</td>
-        </tr>
-    </table>   
-    <button onclick="add">Add</button>
-
+    </table>
+    <button onclick="addrow(1,2,3,4)">Add</button>
     <script>
-            function add() {
-                document.getElementById(`myTable`).innerHTML += /*html*/`
-                
-                `;
+        show();
+        addrow(1,10,0,5);
+        addrow(1,10,15,6);
+        addrow(1,10,30,7);
 
-            }
-
-        
-    </script>
-
-    
-
+        function show() {
+            document.getElementById(`myTable`).innerHTML += /*html*/`
+            <tr>
+                <th>Dag</th>
+                <th>Time</th>
+                <th>Minutt</th>
+                <th>Temperatur</th>
+            </tr>
+            `;            
+        }
+        function addrow(number,number1,number2,number3){
+            document.getElementById(`myTable`).innerHTML += /*HTML*/ `
+            <tr>
+                <td>${number}</td>
+                <td>${number1}</td>
+                <td>${number2}</td>
+                <td>${number3}</td>
+            </tr>
+            `;
+        }
+</script>
 </body>
 </html>
