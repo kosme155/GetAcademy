@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +31,7 @@
         let selectedSquareIndex = 7;
         const size = 64;
         
-        showBoard();
-        
-        
+        showBoard();        
         function showBoard() {
             // del 1: alle rutene som ikke er valgt før den valgte
             const lengthPart1 = selectedSquareIndex;
@@ -50,10 +47,6 @@
             const lengthPart3 = size - (selectedSquareIndex + 1);
             const part3 = ''.padEnd(pattern.length * lengthPart3, pattern)
             document.getElementById('board').innerHTML += part3;
-        }
-
-        function Down() {
-            document.getElementById(`board`).innerHTML = part2;
         }
         </script>
 </body>
