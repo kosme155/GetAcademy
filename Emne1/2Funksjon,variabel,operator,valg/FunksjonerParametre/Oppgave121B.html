@@ -18,9 +18,9 @@
                 + Name(`lname`,`text`,`Last name;`,)
                 + OneToHundred(`zero2hundred`,`range`,`En til hundre:`)
                 + Name(`number`,`number`,`Skriv inn et tall:`)
-                + Radio1(`radio`,`html`,`HTML`)
-                + Radio1(`radio`,`css`,`CSS`)
-                + Radio1(`radio`,`javascript`,`JavaScript`)
+                + Radio1(`radio`,`html`,`lang`,`HTML`)
+                + Radio1(`radio`,`css`,`lang`,`CSS`)
+                + Radio1(`radio`,`javascript`,`lang`,`JavaScript`)
                 + Checkbox1(`checkbox`,`vehicle1`,`I have a bike`)
                 + Checkbox1(`checkbox`,`vehicle1`,`I have a car`)
                 + Checkbox1(`checkbox`,`vehicle1`,`I have a boat`);
@@ -46,8 +46,8 @@
         }
         function Radio1(type,id,name,value){ //Problem wont change. Once picked
             return /*HTML*/`
-            <input type=${type} id=${id} name=${name} value=${value}>
-            <label for=${id}>${name}</label><br/>
+            <input type="${type}" id="${id}" name="${name}" value="${value}">
+            <label for="${id}">${value}</label><br/>
             `;
         }
         function Checkbox1(type,id,name){
