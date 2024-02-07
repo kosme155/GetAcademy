@@ -12,7 +12,7 @@
     <button onclick="showApp(myVariable + 100)">Bigger</button>
     <button onclick="showApp(myVariable --  )">Smaller</button>
     <script>
-        let myVariable = 100
+        let myVariable = 10
     
 
         showApp(myVariable);
@@ -23,10 +23,10 @@
             `; 
         }
         function addsize(myVariable){
-            document.getElementById('app').innerHTML = `<div style="font-size: 100pt;">`;
+            document.getElementById('app').innerHTML = `<div style="font-size: ${myVariable}pt;">`;
         }
         function minsize(myVariable){
-            document.getElementById('app').innerHTML = `<div style="font-size: -10pt;">`;
+            document.getElementById('app').innerHTML = `<div style="font-size: ${myVariable}pt;">`;
 
         }
     </script>
