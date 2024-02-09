@@ -7,26 +7,24 @@
 </head>
 <body>
 
-    <div id="app"></div>
+    <div id="app">Helllo</div>
     
-    <button onclick="showApp(show)">Bigger</button>
-    <button onclick="showApp(show)">Smaller</button>
+    <button onclick="showApp(10)">Bigger</button>;
+    <button onclick="showApp(20)">Smaller</button>;
     
     
     <script>
-        showApp();
-        function show(){
-            + down(20);
-            + up(10);
-        };
-        function down(tall){
-            document.getElementById('app').innerHTML = `<div style="font-size: ${tall}pt;">hello </div>`;
-        };
-
-        function up(myVariable){
-            document.getElementById('app').innerHTML = `<div style="font-size: ${myVariable}pt;">hello </div>`;
-          
-        }
-    </script>
+        showApp(show(m));
+        
+        
+        show(myVariable);
+            function show(myVariable){
+                
+                function up(myVariable){
+                    document.getElementById('app').innerHTML = `<div style="font-size: ${myVariable}pt;">hello </div>`;
+                    
+                }
+            };
+        </script>
 </body>
 </html>
