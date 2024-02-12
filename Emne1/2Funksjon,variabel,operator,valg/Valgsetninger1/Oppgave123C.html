@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                div.trafficLight {
+            width: 3rem;
+            height: 10rem;
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        div.light {
+            background-color: red;
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        document.getElementById('app').innerHTML = createTrafficLight(true, true, false);
+
+        function createLightDiv(color) {
+            return /*HTML*/`<div class="light" style="background-color: ${color};"></div>`;
+        }
+
+        function createTrafficLight(isRed, isYellow, isGreen) {
+            let color1 = 'gray';
+            let color2 = 'gray';
+            let color3 = 'gray';
+            if (isRed) color1 = 'red';
+            if (isYellow) color2 = 'yellow';
+            if (isGreen) color3 = 'green';
+
+            return /*HTML*/`
+                <div class="trafficLight">
+                    ${createLightDiv(color1)}
+                    ${createLightDiv(color2)}
+                    ${createLightDiv(color3)}
+                </div>
+            `;
+        }
+
+        
+        /*
+        Gjør trafikklys-oppgaven på nytt, 
+        men lag en funksjon drawTrafficLight som tar tre logiske verdier som parametre. 
+        Den første sier om rødt lys skal være av eller på, 
+        den andre gult og den siste grønt. 
+        drawTrafficLight(false, false, true) skal for eksempel ha bare det grønne lyset på. 
+        Ta utgangspunkt i koden herfra: getacademy.github.io/EksemplerStartIT/trafficLight.html
+
+        Lag en knapp med teksten neste. 
+        Når man trykker på den, 
+        skal trafikklyset gå videre til neste fase. 
+        Lag en global variabel phase som starter på 0. 
+        Lag en funksjon goToNextPhase som kalles når man trykker på knappen. 
+        Funksjonen skal øke phase med én, 
+        men om verdien er 3 fra før skal den heller begynne på nytt med 0. 
+        Funksjonen skal så kalle drawTrafficLight med korrekte argumenter for hvert lys - i henhold til tabellen under.
+        */
+
+    </script>
+    
+</body>
+</html>
