@@ -8,6 +8,9 @@
 <body>
     <div id="app"></div>
     <script>
+        //Modell
+
+        //view
         drawForm();
 
         function drawForm() {
@@ -21,8 +24,12 @@
             drawField('html', 'HTML', 'radio', 'fav_language');
             drawField('css', 'CSS', 'radio', 'fav_language');
             drawField('js', 'JavaScript', 'radio', 'fav_language');
-        }        
+            drawField(`vehicle`,`I have a bike`,`checkbox`);
+            drawField(`vihicle`,`I have a car`,`checkbox`);
+            drawField(`vihicle`,`I have a boat`,`checkbox`);
+        }
 
+        //controller?
         function drawField(id, label, type, radioGroupName) {
             let minMaxStep = '';
             let breakTag = '<br/>';
@@ -39,9 +46,16 @@
                     <br/>
                     `;
             }
+            if (type == `checkbox`){
+                html = /*html*/`
+                <input type="${type}" id="${id}" name="${id}" value="${label}">
+                <label for="${id}"> ${label}</label><br/>
+                `;
+            }
+            
             document.getElementById('app').innerHTML += html;
         }
-        /*
+        /*  Se video før du starter hvis ikke sitt før!
             Oppdater funksjonen fra eksemplet slik at du også kan legge til checkbox-feltene:
 
             <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">

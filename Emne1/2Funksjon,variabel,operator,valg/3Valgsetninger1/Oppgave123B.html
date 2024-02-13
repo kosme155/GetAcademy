@@ -6,10 +6,30 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">Health Meter
-        <input id="range" type="range" min="0" max="100" value="0">
+    <div id="app" style="background-color: white;">
+        <input id="myRange" class="slider" type="range" min="0" max="100" value="0">
     </div>
+    <div>Number: <span id="demo"></span></div>
+
     <script>
+        let slider = document.getElementById("myRange");
+        let output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+        }
+        //modell
+        let sliderColor = document.getElementById("app");
+
+
+        //view
+
+
+
+        //controller
+
+        
         /*  Lag en helt enkel html-fil med kun en div med en slider som lar brukeren velge et tall mellom 0 og 100. 
             Endre bakgrunnsfargen på diven til rød om tallet er under 30,
             grønn om tallet er over 70 og gul ellers.

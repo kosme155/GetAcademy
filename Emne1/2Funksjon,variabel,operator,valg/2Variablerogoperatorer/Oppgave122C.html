@@ -14,17 +14,20 @@
     
     
     <script>
-        showApp(show(m));
+        showApp(show(myVariable));
         
         
         show(myVariable);
             function show(myVariable){
                 
                 function up(myVariable){
-                    document.getElementById('app').innerHTML = `<div style="font-size: ${myVariable}pt;">hello </div>`;
+                    document.getElementById('app').innerHTML = /*HTML*/`
+                    <div style="font-size: ${myVariable}pt;"></div>
+                    `;
                     
                 }
-            };
+                
+            }
         </script>
 </body>
 </html>
