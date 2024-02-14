@@ -6,11 +6,26 @@
     <title>Document</title>
 </head>
 <body>
-    /*
-    Lag en funksjon til bruk i handlekurven i en nettbutikk. Funksjonen skal lage teksten til en av "ordrelinjene". 
-    Som parameter tar funksjonen varens navn, 
-    varens pris og antall varer. Gitt verdiene 'Tastatur', 129, 
-    3 skal funksjonen returnere teksten 3 stk. 
-    Tastatur a 129kr = 387kr.
+    <div id="app"></div>
+
+    <script>
+        store(`Tastatur`,`129`,`3`)
+
+        function store(product,price,amount){
+            document.getElementById("app").innerHTML += /*HTML*/ `
+            Product:${product}<br>
+            Price:${price}<br>
+            Amount:${amount}<br>
+            Total :${amount*price}<br>
+            `;
+        }
+        /*
+        Lag en funksjon til bruk i handlekurven i en nettbutikk. Funksjonen skal lage teksten til en av "ordrelinjene". 
+        Som parameter tar funksjonen varens navn, 
+        varens pris og antall varer. Gitt verdiene 'Tastatur', 129, 
+        3 skal funksjonen returnere teksten 3 stk. 
+        Tastatur a 129kr = 387kr.
+        */
+    </script>
 </body>
 </html>
