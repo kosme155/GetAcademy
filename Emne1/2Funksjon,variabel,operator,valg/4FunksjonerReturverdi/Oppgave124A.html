@@ -12,14 +12,14 @@
         store(`Tastatur`,129,3)
         store(`mus`,50,2)
 
-        function store(product,price,amount){
-            document.getElementById("app").innerHTML += /*HTML*/ `
-            Product:${product}<br>
-            Price:${price}<br>
-            Amount:${amount}<br>
-            Total :${amount*price}<br>
-            `;
-        }
+        // function store(product,price,amount){
+        //     document.getElementById("app").innerHTML += /*HTML*/ `
+        //     Product:${product}<br>
+        //     Price:${price}<br>
+        //     Amount:${amount}<br>
+        //     Total :${amount*price}<br>
+        //     `;
+        //     }
         function store(product,price,amount){
             document.getElementById("app").innerHTML += /*HTML*/`
             ${amount} stk. ${product} a ${price}kr = ${amount*price}kr.<br/>
