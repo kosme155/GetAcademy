@@ -47,17 +47,15 @@
         // view
         updateView();
         function updateView() {
+            let showCheating = '<div>You have cheated</div>'
+            let noobGamer = cheatCodeUsed === false ? '' : showCheating
             var smiley = smileyIndex == 0 ? '😀' : '😁';
             document.getElementById('app').innerHTML = /*HTML*/ `
                 <div id="image" onclick="doClick()">${smiley}</div>
-                <div id="pointsInfo">${points}</div>
+                <div id="pointsInfo">${points}${noobGamer}</div>
                 <button onclick="buyUpgrade()">Kjøp oppgradering (10 poeng)</button>
                 <button onclick="cheatCode()">Cheat +10 </button>
                 
-                let showCheating = <div>You have cheated</div>
-                let noobGamer = cheatCodeUsed === false ? '' : showCheating
-                document.getElementById('app').innerHTML += noobGamer
-
                 `;
         }
     </script>
