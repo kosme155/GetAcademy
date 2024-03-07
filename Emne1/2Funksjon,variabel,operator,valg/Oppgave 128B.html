@@ -6,10 +6,18 @@
     <title>GuessTHeNumber</title>
 </head>
 <body>
+    <h1>Guess The Number</h1>
+    <input type="number">
 
 
     <script>
-        
+        let secretNumber = getRandomNumber(1, 100)
+
+
+
+        function getRandomNumber(min, max) {
+            return min + Math.floor(Math.random() * (max - min + 1));
+        }
 
 
     </script>
