@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game!</title>
+</head>
+<body>
+    <h1>HighScore: <label id="myApp">0</label></h1>
+    <br>
+    <button onclick="addscore(Damage)">Click Damage</button>
+    <button onclick="upgrade(10)">Upgrade Damage +1</button>
+
+<script>
+    
+    let Damage = 1;
+    let HighScore = 0;
+
+    function addscore(Damage){
+        HighScore -= Damage;
+        document.getElementById('myApp').innerHTML = HighScore
+    }
+    function upgrade(upgradecost) {
+        if (HighScore >= 10) {
+            HighScore -= upgradecost
+            Damage ++
+            document.getElementById('myApp').innerHTML = HighScore
+        }
+    }
+
+
+</script>
+    
+</body>
+</html>
