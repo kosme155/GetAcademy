@@ -20,6 +20,7 @@
         var points = 0;
         var pointsPerClick = 1;
         var smileyIndex = 0;
+        var cheatCodeUsed = false;
 
         // controller
         
@@ -39,6 +40,7 @@
         function cheatCode(){
             points *= 10;
             pointsPerClick *= 10;
+            cheatCodeUsed = true;
             updateView();
         }
 
@@ -46,12 +48,17 @@
         updateView();
         function updateView() {
             var smiley = smileyIndex == 0 ? '😀' : '😁';
-            document.getElementById('app').innerHTML = `
+            document.getElementById('app').innerHTML = /*HTML*/ `
                 <div id="image" onclick="doClick()">${smiley}</div>
                 <div id="pointsInfo">${points}</div>
                 <button onclick="buyUpgrade()">Kjøp oppgradering (10 poeng)</button>
                 <button onclick="cheatCode()">Cheat +10 </button>
-            `;
+                
+                let showCheating = <div>You have cheated</div>
+                let noobGamer = cheatCodeUsed === false ? '' : showCheating
+                document.getElementById('app').innerHTML += noobGamer
+
+                `;
         }
     </script>
 </body>
