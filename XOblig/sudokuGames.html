@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sudokuGame.css">
+    <link rel="stylesheet" href="sudokuGames.css">
 </head>
 
 <body>
     <div id="app"></div>
+    <button onclick="restatGame()">Reset!</button>
     <script>
         // model
         const boards = [
@@ -56,6 +57,10 @@
         // controller
         function selectBoard(index) {
             selectedBoardIndex = index;
+            updateView();
+        }
+        function restatGame() {
+            selectedBoardIndex = 0;
             updateView();
         }
     </script>
