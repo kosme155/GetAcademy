@@ -6,6 +6,57 @@
     <title>myApp</title>
 </head>
 <body>
+    <div id="app">
+    </div>
+
+    <script>
+    //model
+    let foregroundsColor;
+    let backgroundColor;
+
+    //view
+    show()
+    function show() {
+        document.getElementById('app').innerHTML = /*html*/`
+        <div id="foreground">
+            <label>Velg forgrunnsfarge:</label>
+            <select onchange="setForegroundsColor(this.value)">
+                <option value="">Farge</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+            </select>
+        </div>
+        
+        <div id="bakgrunnsfarge">
+            <label>Velg bakgrunnsfarge:</label>
+            <select onchange="backgroundColor(this.value)">
+                <option value="">Farge</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+            </select>
+        </div>
     
+    <button onclick="addDiv()">Legg til div</button>
+    `
+    }
+
+    //controller
+    function setForegroundsColor(color){
+        foregroundsColor = color
+    }
+    function setBackgroundColor(color){
+        backgroundColor = color
+    }
+    function addDiv() {
+    document.body.innerHTML += /*HTML*/`
+    <div style="background-color: ${backgroundColor};
+    color: ${foregroundsColor};">Farge ting Tang</div>
+            
+    `
+    }
+
+    </script>
 </body>
 </html>
