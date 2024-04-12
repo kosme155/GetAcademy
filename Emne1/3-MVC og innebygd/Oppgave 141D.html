@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //modell
+        let firstName;
+        let email;
+
+        //view
+        show()
+        function show() {
+            document.getElementById('app').innerHTML = /*HTML*/`
+            Enter FirstName:
+            <br>
+            <input 
+                type="text"
+                value="${firstName || ''}"
+                oninput="firstName = this.value">
+            <br>
+            Enter Email:
+            <br>
+            <input 
+                type="email"
+                value="${email || ''}"
+                oninput="email = this.value">
+            <br>
+            <button onclick="newShow()">Register</button>
+            `
+        }
+
+        //controller
+        function newShow() {
+            document.getElementById('app').innerHTML = /*HTML*/`
+            FirstName: ${firstName}
+            <br>
+            Email: ${email}
+            <br>
+            <button onclick="show()">Rediger</button>
+            `
+        }
+
+    </script>
+</body>
+</html>
