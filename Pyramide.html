@@ -1,42 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <pre id="app"></pre>
 
     <script>
-        // Model
-        const character = "!";
-        const count = 10;
-        const rows = [];
-        let inverted = false;
+      // Model
+      const character = "!";
+      const count = 10;
+      const rows = [];
+      let inverted = false;
 
-        // View
-        function padRow(rowNumber, rowCount) {
-            return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
+      // View
+      function padRow(rowNumber, rowCount) {
+        return (
+          " ".repeat(rowCount - rowNumber) +
+          character.repeat(2 * rowNumber - 1) +
+          " ".repeat(rowCount - rowNumber)
+        );
+      }
+
+      for (let i = 1; i <= count; i++) {
+        if (inverted) {
+          rows.unshift(padRow(i, count));
+        } else {
+          rows.push(padRow(i, count));
         }
+      }
 
-        for (let i = 1; i <= count; i++) {
-            if (inverted) {
-                rows.unshift(padRow(i, count));
-            } else {
-                rows.push(padRow(i, count));
-            }
-        }
+      let result = "";
 
-        let result = "";
+      for (const row of rows) {
+        result += row + "\n";
+      }
 
-        for (const row of rows) {
-            result += row + "\n";
-        }
+      document.getElementById("app").innerText = result;
 
-        document.getElementById("app").innerText = result;
-
-        // Controller
+      // Controller
     </script>
-</body>
+  </body>
 </html>
