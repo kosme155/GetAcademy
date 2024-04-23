@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,8 +38,8 @@
 
 <body>
     DRY-prinsippet
-    <br>
     Don't Repeat Yourself
+
     <h3>
         JavaScript
     </h3>
@@ -52,65 +51,132 @@
     </div>
 
     <script>
-        //modell
-        let imgElement = '<img src="https://getacademy.no/hubfs/GET_RGB_logo-01-2.png" >';
-        let logoIndex = 0;
+        //mobel
+
         //view
-        show('disabled', 'disabled', '', '',imgElement,'','','');
-        function show(button1, button2, button3, button4,img1,img2,img3,img4) {
+        updateView();
+        function updateView() {
             document.getElementById('app').innerHTML = /*HTML*/`
             <div class="board">
-                <div class="square"> ${img1}</div>
-                <div class="square">${img2}</div>
-                <div class="square">${img3}</div>
-                <div class="square">${img4}</div>
+                <div class="square"></div>
+                    <img src="https://getacademy.no/hubfs/GET_RGB_logo-01-2.png"/>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
             </div>
-            <div class="buttons">
-                <button ${button1} onclick="showBoardWithLogo(logoUp)">▲</button>
-            <div>
-                <button ${button2} onclick="showBoardWithLogo(logoLeft)">◀</button>
-                <button ${button3} onclick="showBoardWithLogo(logoRight)">▶</button>
-            </div>
-                <button ${button4} onclick="showBoardWithLogo(logoDown)">▼</button>
+
+            <div class="button">
+                    <button>▲</button>    
+                <div>
+                    <button>◀</button>    
+                    <button>▶</button>    
+                </div>
+                    <button>▼</button>    
             </div>
             `
         }
+
         //controller
-        function showBoardWithLogo(move) {
-            if (move == 'logoUp' && logoIndex == 2) {
-                logoIndex = 0
-                show('disabled', 'disabled', '', '',imgElement,'','','')
-            }
-            if (move == 'logoUp' && logoIndex == 3) {
-                logoIndex = 1
-                show('disabled', '', 'disabled', '','',imgElement,'','')
-            }
-            if (move == 'logoDown' && logoIndex == 2) {
-                logoIndex = 0
-                show('', 'disabled', '', 'disabled','','',imgElement,'')
-            }
-            if (move == 'logoDown' && logoIndex == 2) {
-                logoIndex = 0
-                show('', '', 'disabled', 'disabled','','','',imgElement)
-            }
-            if (move == 'logoRight' && logoIndex == 2) {
-                logoIndex = 0
-                show('disabled', '', 'disabled', '','',imgElement,'','')
-            }
-            if (move == 'logoRight' && logoIndex == 2) {
-                logoIndex = 0
-                show('', '', 'disabled', 'disabled','','','',imgElement)
-            }
-            if (move == 'logoLeft' && logoIndex == 2) {
-                logoIndex = 0
-                show('disabled', 'disabled', '', '',imgElement,'','','')
-            }
-            if (move == 'logoLeft' && logoIndex == 2) {
-                logoIndex = 0
-                show('', 'disabled', '', 'disabled','','',imgElement,'')
-            }
-            
-        }
+
+
+        // showBoardWithLogoDownLeft();
+
+        // function showBoardWithLogoUpLeft(){
+        //     document.getElementById('app').innerHTML = /*HTML*/`
+        //     <div class="board">
+        //         <div class="square">
+        //             <img src="https://getacademy.no/hubfs/GET_RGB_logo-01-2.png" />
+        //         </div>
+        //         <div class="square">¨
+        //         </div>
+        //         <div class="square">
+        //         </div>
+        //         <div class="square">
+        //         </div>
+        //     </div>
+        //     <div class="buttons">
+        //         <button disabled>▲</button>
+        //         <div>
+        //             <button disabled>◀</button>
+        //             <button onclick="showBoardWithLogoUpRight()">▶</button>
+        //         </div>
+        //         <button onclick="showBoardWithLogoDownLeft()">▼</button>
+        //     </div>
+        //     `;
+        // }
+
+        // function showBoardWithLogoUpRight(){
+        //     document.getElementById('app').innerHTML = /*HTML*/`
+        //     <div class="board">
+        //         <div class="square">
+        //             </div>
+        //         <div class="square">¨
+        //             <img src="https://getacademy.no/hubfs/GET_RGB_logo-01-2.png" />
+        //         </div>
+        //         <div class="square">
+        //         </div>
+        //         <div class="square">
+        //         </div>
+        //     </div>
+        //     <div class="buttons">
+        //         <button disabled>▲</button>
+        //         <div>
+        //             <button onclick="showBoardWithLogoUpLeft()">◀</button>
+        //             <button disabled>▶</button>
+        //         </div>
+        //         <button onclick="showBoardWithLogoDownRight()">▼</button>
+        //     </div>
+        //     `;
+        // }
+
+        // function showBoardWithLogoDownRight(){
+        //     document.getElementById('app').innerHTML = /*HTML*/`
+        //     <div class="board">
+        //         <div class="square">
+        //         </div>
+        //         <div class="square">
+        //         </div>
+        //         <div class="square">
+        //         </div>
+        //         <div class="square">
+        //             <img src="https://getacademy.no/hubfs/GET_RGB_logo-01-2.png" />
+        //         </div>
+        //     </div>
+        //     <div class="buttons">
+        //         <button onclick="showBoardWithLogoUpRight()">▲</button>
+        //         <div>
+        //             <button onclick="showBoardWithLogoDownLeft()">◀</button>
+        //             <button disabled>▶</button>
+        //         </div>
+        //         <button disabled>▼</button>
+        //     </div>
+        //     `;
+        // }
+
+        // function showBoardWithLogoDownLeft(){
+        //     document.getElementById('app').innerHTML = /*HTML*/`
+        //     <div class="board">
+        //         <div class="square">
+        //             </div>
+        //         <div class="square">
+        //             </div>
+        //         <div class="square">
+        //             <img src="https://getacademy.no/hubfs/GET_RGB_logo-01-2.png" />
+        //         </div>
+        //         <div class="square">
+        //         </div>
+        //     </div>
+        //     <div class="buttons">
+        //         <button onclick="showBoardWithLogoUpLeft()">▲</button>
+        //         <div>
+        //             <button disabled>◀</button>
+        //             <button onclick="showBoardWithLogoDownRight()">▶</button>
+        //         </div>
+        //         <button disabled>▼</button>
+        //     </div>
+        //     `;
+        // }
+
     </script>
 </body>
 
