@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      //modell
+
+        const rows = 10 ;
+        const columns = 4 ;
+        const smallHoleColors = ['red', 'white'] ;
+        const bigHoleColers = ['yellow', 'blue', 'red', 'purple', 'green'] ;
+
+      //view
+      updateView();
+      function updateView() {
+        document.getElementById("app").innerHTML = /*HTML*/ `
+            <div class="board">
+              <h1>MasterMind</h1>
+              <div class="bigHoles"></div>
+              <div class="smallHoles"></div>
+            </div>
+            <div class="submit">Check</div>
+            `;
+      }
+
+      //controller
+    </script>
+  </body>
+</html>
